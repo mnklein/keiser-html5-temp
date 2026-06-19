@@ -1,0 +1,117 @@
+/* ---- Embedded brand font (subsetted Inter, packaged in /assets) ---- */
+@font-face{
+  font-family:"Inter";
+  font-weight:400;
+  font-style:normal;
+  src:url("assets/Inter-Regular.woff2") format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family:"Inter";
+  font-weight:700;
+  font-style:normal;
+  src:url("assets/Inter-Bold.woff2") format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family:"Inter";
+  font-weight:800;
+  font-style:normal;
+  src:url("assets/Inter-ExtraBold.woff2") format("woff2");
+  font-display:swap;
+}
+
+/* ---- Brand colors (dark-mode palette) ---- */
+:root{
+  --white:#FFFFFF;
+  --dm-red:#d10a2c;   /* DM Red — data/emphasis on dark backgrounds */
+  --black:#000000;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{width:1080px;height:1080px;overflow:hidden;background:var(--black);}
+a#clickArea{display:block;width:1080px;height:1080px;text-decoration:none;cursor:pointer;}
+
+#ad{
+  position:relative;
+  width:1080px;height:1080px;
+  font-family:"Inter",sans-serif;
+  background:var(--black);
+  overflow:hidden;
+}
+
+/* Background photo */
+#bg{
+  position:absolute;inset:0;
+  background:url("assets/background.png") center/cover no-repeat;
+}
+/* Red wash for text legibility (left + bottom), matches comp */
+#wash{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg, rgba(120,10,10,0.55) 0%, rgba(120,10,10,0.0) 45%),
+    linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.0) 35%);
+}
+
+.red{color:var(--dm-red);}
+
+/* Logo */
+#logo{
+  position:absolute;left:60px;top:92px;
+  width:430px;height:auto;
+}
+
+/* Body copy (left) */
+#body{
+  position:absolute;left:62px;top:486px;
+  width:470px;
+  color:var(--white);
+  font-weight:700;
+  font-size:42px;
+  line-height:1.28;
+  letter-spacing:.2px;
+}
+
+/* Headline (right column) */
+#headline{
+  position:absolute;left:560px;top:120px;
+  width:480px;
+}
+.hl{
+  display:block;
+  color:var(--white);
+  font-weight:800;
+  font-size:96px;
+  line-height:0.94;
+  letter-spacing:-1px;
+}
+/* two-class selector outranks .hl so the red accent applies on the headline */
+.hl.red{color:var(--dm-red);}
+
+/* Protocol cover */
+#cover{
+  position:absolute;left:400px;top:800px;
+  width:172px;height:auto;
+  box-shadow:0 8px 28px rgba(0,0,0,.45);
+}
+
+/* CTA */
+#cta{
+  position:absolute;left:560px;top:828px;
+  color:var(--white);
+}
+.cta-label{
+  font-weight:700;font-size:25px;letter-spacing:.5px;margin-bottom:8px;
+}
+.cta-main{
+  font-weight:800;font-size:50px;line-height:1.02;
+}
+
+/* ---- Light entrance animation (<2s total, plays once) ---- */
+.anim{opacity:0;transform:translateY(14px);animation:rise .55s ease-out forwards;}
+#body{animation-delay:.25s;}
+.hl{animation-delay:calc(.45s + var(--i) * .09s);}
+#cover{animation-delay:1.15s;}
+#cta{animation-delay:1.35s;}
+@keyframes rise{to{opacity:1;transform:translateY(0);}}

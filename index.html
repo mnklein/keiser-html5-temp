@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Required by ad servers: declares the creative dimensions -->
+  <meta name="ad.size" content="width=1080,height=1080">
+  <meta name="viewport" content="width=1080, height=1080">
+  <title>Keiser — B03 Force/ACL — 1080x1080</title>
+
+  <!-- clickTag: ad server injects/overrides the exit URL; required for click tracking -->
+  <script type="text/javascript">
+    var clickTag = "https://www.keiser.com/deceleration-protocol";
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Entire ad is the click area -->
+  <a id="clickArea" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" aria-label="Get the Keiser Deceleration Training Protocol">
+    <div id="ad">
+
+      <!-- Background photo (no text baked in) -->
+      <div id="bg"></div>
+      <!-- Brand red gradient wash for legibility -->
+      <div id="wash"></div>
+
+      <!-- Logo -->
+      <img id="logo" src="assets/logo.png" alt="Keiser — Engineering Human Performance">
+
+      <!-- Body copy (left) -->
+      <div id="body" class="anim">
+        Deceleration generates<br>
+        2.7&#215; the force<br>
+        of acceleration &#8212;<br>
+        and <span class="red">it&#8217;s trainable.</span>
+      </div>
+
+      <!-- Headline (right) -->
+      <div id="headline">
+        <span class="hl anim" style="--i:0">THE</span>
+        <span class="hl anim" style="--i:1">FORCE</span>
+        <span class="hl anim" style="--i:2">THAT</span>
+        <span class="hl anim" style="--i:3">WINS</span>
+        <span class="hl anim" style="--i:4">GAMES</span>
+        <span class="hl anim" style="--i:5">TEARS</span>
+        <span class="hl red anim" style="--i:6">THE ACL</span>
+      </div>
+
+      <!-- Protocol cover -->
+      <img id="cover" class="anim" src="assets/cta-cover.png" alt="Keiser Deceleration Training Protocol">
+
+      <!-- CTA -->
+      <div id="cta" class="anim">
+        <div class="cta-label">DECELERATION TRAINING</div>
+        <div class="cta-main">GET THE PROTOCOL<br><span class="red">FREE.</span></div>
+      </div>
+
+    </div>
+  </a>
+
+  <script src="ad.js"></script>
+</body>
+</html>
